@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.epam.webserviceserver.soap;
 
 import javax.jws.WebService;
@@ -16,13 +11,33 @@ import javax.jws.WebParam;
 @WebService(serviceName = "Calculator")
 public class Calculator {
 
+    @WebMethod(operationName = "addition")
+    public double addition(@WebParam(name = "a") double a, @WebParam(name = "b") double b) {
+        return a+b;
+    }
 
-    /**
-     * Web service operation
-     */
-    @WebMethod(operationName = "add")
-    public long add(@WebParam(name = "a") long a, @WebParam(name = "b") long b) {
-        //TODO write your implementation code here:
-        return 0;
+    @WebMethod(operationName = "multiply")
+    public double multiply(@WebParam(name = "a") double a, @WebParam(name = "b") double b) {
+        return a*b;
+    }
+    
+    @WebMethod(operationName = "subtraction")
+    public double subtraction(@WebParam(name = "a") double a, @WebParam(name = "b")double b){
+        return a-b;
+    }
+    
+    @WebMethod(operationName = "division")
+    public double division(@WebParam(name = "a") double a, @WebParam(name = "b") double b){
+        return a/b;
+    }
+    
+    @WebMethod(operationName = "cos")
+    public double cos(@WebParam(name = "a")double a){
+        return Math.cos(a);
+    }
+    
+    @WebMethod(operationName = "sin")
+    public double sin(@WebParam(name = "a") double a){
+        return Math.sin(a);
     }
 }
