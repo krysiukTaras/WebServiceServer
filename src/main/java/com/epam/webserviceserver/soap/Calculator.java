@@ -39,5 +39,5 @@ public class Calculator {
     @WebMethod(operationName = "sin")
     public double sin(@WebParam(name = "a") double a){
         return Math.sin(a);
-    }
+    }    
 }
