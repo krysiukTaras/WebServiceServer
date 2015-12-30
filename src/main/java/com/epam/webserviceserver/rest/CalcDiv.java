@@ -1,35 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.epam.webserviceserver.rest;
 
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.UriInfo;
 
 /**
  * REST Web Service
  *
- * @author Taras_Krysiuk
+ * @author taras
  */
-@Path("temp")
-public class temp {
+
+
+@Path("calc/div")
+public class CalcDiv {
 
     @Context
     private UriInfo context;
 
-  
-    public temp() {
+    public CalcDiv() {
     }
 
- 
     @GET
     @Produces("application/json")
     public String getJson() {
@@ -37,7 +31,6 @@ public class temp {
         throw new UnsupportedOperationException();
     }
 
-  
     @PUT
     @Consumes("application/json")
     public void putJson(String content) {

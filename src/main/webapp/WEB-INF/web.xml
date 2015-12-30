@@ -26,5 +26,4 @@
         <servlet-name>ServletAdaptor</servlet-name>
         <url-pattern>/resources/*</url-pattern>
     </servlet-mapping>
-    
 </web-app>
