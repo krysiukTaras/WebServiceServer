@@ -1,10 +1,8 @@
 package com.epam.webserviceserver.rest;
 
-import javax.ws.rs.Produces;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PUT;
+import com.epam.webserviceserver.rest.model.Result;
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 
@@ -23,8 +21,12 @@ public class CalcSin {
     
     @GET
     @Produces("application/json")
-    public String getJson() {
-        throw new UnsupportedOperationException();
+    public String getJson(@QueryParam("a") double a) {
+        try{
+            return new Serializer().serialize(new Result(Math.sin(a)));
+        } catch(Exception e){
+            return new Serializer().serialize("wrong input parameter");
+        }
     }
     
     @PUT
